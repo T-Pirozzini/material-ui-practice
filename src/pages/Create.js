@@ -7,10 +7,24 @@ import CastleIcon from '@mui/icons-material/Castle';
 import CookieIcon from '@mui/icons-material/Cookie';
 import Face2Icon from '@mui/icons-material/Face2';
 
-export default function Create() {
+const style = {
+  fontSize: 60,
+  backgroundColor: 'green',
+  '&:hover': {
+    backgroundColor: 'blue',
+  }
+};
+
+const title = {
+  textDecoration: "underline",
+  marginBottom: 20
+}
+
+export default function Create() {  
+
   return (
     <Container>      
-     <Typography
+     <Typography        
         variant="h6" 
         color="textSecondary"
         component="h2"
@@ -19,13 +33,21 @@ export default function Create() {
         Create a New Note
       </Typography>
 
-      <Button onClick={() => console.log("You clicked me")} type="submit" color="secondary" variant="contained" disableElevation startIcon={<CookieIcon />} endIcon={<Face2Icon />}>
+      <Button
+        sx={style} 
+        onClick={() => console.log("You clicked me")} 
+        type="submit" 
+        color="secondary" 
+        variant="contained" 
+        disableElevation 
+        startIcon={<CookieIcon />} 
+        endIcon={<Face2Icon />}>
         Submit
       </Button>
 
       <br></br>
 
-      <Button type="submit" color="primary">Submit</Button>
+      <Button sx={title} type="submit" color="primary">Submit</Button>
       <Button type="submit" color="secondary" variant="outlined">Submit</Button>
 
       <br></br>
